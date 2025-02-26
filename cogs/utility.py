@@ -16,8 +16,10 @@ class Utility(commands.Cog):
     
     @commands.command(name="register")
     async def adduser(self, ctx):
-        add_user(ctx.message)
+        add_user(ctx.author.id, ctx.author.name, ctx.author.display_name)
         await ctx.send("User added")
+
+    
 
 async def setup(bot):
     print("Loading Utility cog")
