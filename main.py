@@ -2,9 +2,14 @@
 import discord
 from discord.ext import commands
 from config.config import Config
+from utils.database import init_db
 
 import asyncio
 import os
+
+# before anything, make sure the database exists
+init_db()
+
 
 # Creating the bot
 intent = discord.Intents.default()
